@@ -29,7 +29,9 @@ public struct TransformerNet: Layer {
     public var deconv3 = UpsampleConvLayer(in_channels: 32, out_channels: 3, kernel_size: 9, stride: 1)
 
     // activation
-    var relu = ReLU<Float>()
+    public var relu = ReLU<Float>()
+
+    public init() {}
 
     @differentiable
     public func callAsFunction(_ input: Input) -> Output {
